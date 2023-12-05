@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class cubeCamera : MonoBehaviour
+public class PlayerCamera : MonoBehaviour
 {
     public Transform target;  // 따라갈 대상인 큐브의 Transform
     public float distance = 5f;  // 카메라와 대상 사이의 거리

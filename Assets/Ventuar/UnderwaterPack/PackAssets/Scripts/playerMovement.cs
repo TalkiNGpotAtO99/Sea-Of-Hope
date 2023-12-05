@@ -1,8 +1,9 @@
+using System.Security.Cryptography;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class cubeMovement : MonoBehaviour
+public class playerMovement : MonoBehaviour
 {
    public float acceleration = 2f;   // 가속도
     public float deceleration = 10f;  // 감속도
@@ -12,7 +13,10 @@ public class cubeMovement : MonoBehaviour
     private float currentSpeed = 0f;
 
     private Rigidbody rb;
+
+    Animator animator;
     
+
     void Start()
     {
         rb = GetComponent<Rigidbody>();
@@ -20,6 +24,8 @@ public class cubeMovement : MonoBehaviour
         rb.interpolation = RigidbodyInterpolation.Interpolate;
         // 중력 비활성화
         rb.useGravity = false;
+
+        animator = GetComponent<Animator>();
     }
     void FixedUpdate()
     {
@@ -41,7 +47,6 @@ public class cubeMovement : MonoBehaviour
         float horizontal = Input.GetAxis("Horizontal");
         float vertical = Input.GetKey(KeyCode.W) ? 1f : Input.GetKey(KeyCode.S) ? -1f : 0f;
         float upDownRotation = Input.GetKey(KeyCode.UpArrow) ? 1f : Input.GetKey(KeyCode.DownArrow) ? -1f : 0f;
-
         // 전진 및 후진 가속도 및 감속도 적용
         if (vertical != 0)
         {
@@ -66,6 +71,13 @@ public class cubeMovement : MonoBehaviour
         // 좌우 회전
         Vector3 rotateDirection = new Vector3(0, horizontal, 0);
         transform.Rotate(rotateDirection * rotateSpeed * Time.deltaTime);
+
+        // 공격 및 채집 모션
+        if(Input.GetKeyDown(KeyCode.Space))
+        {
+            animator.SetTrigger("Attack");
+        }
+        
     }
     void OnCollisionEnter(Collision collision)
     {
