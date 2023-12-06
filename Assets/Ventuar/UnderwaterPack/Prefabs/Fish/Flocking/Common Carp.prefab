@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 1521860567818021583}
   - component: {fileID: 4229986512391469298}
   - component: {fileID: 2114567962165417197}
+  - component: {fileID: -4450682343128625446}
   m_Layer: 8
   m_Name: Common Carp
   m_TagString: Untagged
@@ -87,6 +88,18 @@ CapsuleCollider:
   m_Height: 4.0207896
   m_Direction: 2
   m_Center: {x: 0, y: 0.08795929, z: -0.6898544}
+--- !u!114 &-4450682343128625446
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4915545860315762724}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aaeed83fbb41a44a4becaa03152d9cf3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &7532071171743057394
 GameObject:
   m_ObjectHideFlags: 0

@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 601711703920471566}
   - component: {fileID: -6825005858970339242}
   - component: {fileID: 2504723458630563199}
+  - component: {fileID: 7385255140323389037}
   m_Layer: 8
   m_Name: Catfish
   m_TagString: Untagged
@@ -87,6 +88,18 @@ CapsuleCollider:
   m_Height: 4.8993015
   m_Direction: 2
   m_Center: {x: 0, y: 0.0446527, z: -0.96825606}
+--- !u!114 &7385255140323389037
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4140041696576236403}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aaeed83fbb41a44a4becaa03152d9cf3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &6040418306646975299
 GameObject:
   m_ObjectHideFlags: 0

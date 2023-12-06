@@ -123,6 +123,7 @@ GameObject:
   - component: {fileID: 4531993457363452455}
   - component: {fileID: 1468130954049998479}
   - component: {fileID: 8645620393904690963}
+  - component: {fileID: -1420497514451150078}
   m_Layer: 8
   m_Name: Salmon
   m_TagString: Untagged
@@ -199,3 +200,15 @@ CapsuleCollider:
   m_Height: 4.41716
   m_Direction: 2
   m_Center: {x: 0, y: 0.062937975, z: -0.78781134}
+--- !u!114 &-1420497514451150078
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7333575774764285367}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aaeed83fbb41a44a4becaa03152d9cf3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

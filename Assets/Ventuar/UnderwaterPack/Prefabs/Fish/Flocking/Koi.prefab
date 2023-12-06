@@ -123,6 +123,7 @@ GameObject:
   - component: {fileID: 5564444929286866569}
   - component: {fileID: 5644081956815899859}
   - component: {fileID: 5564444929286866571}
+  - component: {fileID: -8061340588957614971}
   m_Layer: 8
   m_Name: Koi
   m_TagString: Untagged
@@ -199,3 +200,15 @@ CapsuleCollider:
   m_Height: 3.2704144
   m_Direction: 2
   m_Center: {x: 0, y: 0.0384655, z: -0.5250983}
+--- !u!114 &-8061340588957614971
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5564444929286866572}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aaeed83fbb41a44a4becaa03152d9cf3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

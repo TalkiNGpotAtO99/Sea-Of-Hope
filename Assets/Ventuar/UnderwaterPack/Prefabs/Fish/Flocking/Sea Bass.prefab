@@ -123,6 +123,7 @@ GameObject:
   - component: {fileID: 7699355857365881555}
   - component: {fileID: -1249990986750395007}
   - component: {fileID: 6235950511008432315}
+  - component: {fileID: -1428154034802762593}
   m_Layer: 8
   m_Name: Sea Bass
   m_TagString: Untagged
@@ -199,3 +200,15 @@ CapsuleCollider:
   m_Height: 3.3931994
   m_Direction: 2
   m_Center: {x: 0, y: -0.010202169, z: -0.44953847}
+--- !u!114 &-1428154034802762593
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3733295351604291071}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aaeed83fbb41a44a4becaa03152d9cf3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
