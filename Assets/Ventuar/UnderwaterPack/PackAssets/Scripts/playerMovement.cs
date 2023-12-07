@@ -16,6 +16,7 @@ public class playerMovement : MonoBehaviour
 
     Animator animator;
     
+    public Collider waterCollider;
 
     void Start()
     {
@@ -39,6 +40,7 @@ public class playerMovement : MonoBehaviour
     void Update()
     {
         MoveAndRotate();
+        CheckInsideWater();
     }
     
 
@@ -79,6 +81,16 @@ public class playerMovement : MonoBehaviour
         }
         
     }
+    void CheckInsideWater(){
+        if (transform.position.y > waterCollider.bounds.min.y+3f)
+        {
+            // 플레이어가 물 밖으로 나가려고 할 때
+            Vector3 newPosition = transform.position;
+            newPosition.y = waterCollider.bounds.min.y+3f;
+            transform.position = newPosition;
+        }
+    }
+
     void OnCollisionEnter(Collision collision)
     {
         // 충돌 시 가속도를 -1으로 만듦
