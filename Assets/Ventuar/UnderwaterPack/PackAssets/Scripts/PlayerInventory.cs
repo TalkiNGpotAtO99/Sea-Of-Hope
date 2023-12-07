@@ -11,7 +11,12 @@ public class PlayerInventory : MonoBehaviour
     {
         InitializeInventory();
     }
-    private void InitializeInventory()
+
+    public Dictionary<string, int> GetFishCount(){
+        return collectedFishCount;
+        
+    }
+    public void InitializeInventory()
     {
         // 여러 물고기 종류에 대한 초기값 설정
         // 다금바리, 혹돔, 참돔, 농어, 병어, 메기, 고등어, 꽁치, 전갱이, 잉어, 미역
@@ -22,7 +27,6 @@ public class PlayerInventory : MonoBehaviour
             collectedFishCount[fishType] = 0;
         }
     }
-
     public void CollectFish(string fishType)
     {
         if (collectedFishCount.ContainsKey(fishType))
