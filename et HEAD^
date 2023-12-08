@@ -1,0 +1,140 @@
+[33mcommit 6c960d9a8478947cd4d71130ed0fd059c62fc74a[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32missue/12[m[33m, [m[1;32mmain[m[33m)[m
+Author: TalkiNGpotAtO99 <cathy291@cau.ac.kr>
+Date:   Fri Dec 8 21:50:22 2023 +0900
+
+    산소바와 hp구현
+
+[33mcommit ae92ae52d3e4c0f63187f5d3a58f8ae412931c7d[m[33m ([m[1;31morigin/main[m[33m, [m[1;31morigin/issue/12[m[33m, [m[1;31morigin/HEAD[m[33m)[m
+Merge: 97ac407 803acc9
+Author: Sang Min Kim <nstar971125@naver.com>
+Date:   Fri Dec 8 19:43:35 2023 +0700
+
+    Merge pull request #13 from nstar1125/issues/8
+    
+    Issues/8
+
+[33mcommit 803acc9b47f7a9022707742e98abc330b74b1d4e[m[33m ([m[1;31morigin/issues/8[m[33m)[m
+Author: ‘nstar1125’ <nstar971125@naver.com>
+Date:   Fri Dec 8 21:34:26 2023 +0900
+
+    :sparkles: 어망 속 물고기 확인 기능
+
+[33mcommit 44156c1d1df2983b3363c79fb8415344f0f787d5[m
+Author: ‘nstar1125’ <nstar971125@naver.com>
+Date:   Fri Dec 8 20:34:02 2023 +0900
+
+    :sparkles: 타이머 추가
+
+[33mcommit 97ac407bc9a8ae72017501bfdbcb2ac9a428b8bb[m
+Merge: a586fa7 c16b256
+Author: TalkiNGpotAtO99 <151898839+TalkiNGpotAtO99@users.noreply.github.com>
+Date:   Fri Dec 8 16:54:52 2023 +0900
+
+    Merge pull request #11 from nstar1125/issue/9
+    
+    UI 중간업로드
+
+[33mcommit c16b256965ab1d003f1fc3f8c6c9caed075a5ba7[m[33m ([m[1;31morigin/issue/9[m[33m, [m[1;32missue/9[m[33m)[m
+Author: TalkiNGpotAtO99 <cathy291@cau.ac.kr>
+Date:   Fri Dec 8 16:51:27 2023 +0900
+
+    UI 중간업로드
+
+[33mcommit a586fa7b84ee23b7d2e38e347e7224801d675ec8[m
+Merge: 7263219 f28b7ec
+Author: Sang Min Kim <nstar971125@naver.com>
+Date:   Fri Dec 8 13:18:02 2023 +0700
+
+    Merge pull request #7 from nstar1125/issue/6
+    
+    🍱 add boat with buoyancy
+
+[33mcommit f28b7ec0ea995b28b1526ace034d1e598c81d00b[m[33m ([m[1;31morigin/issue/6[m[33m)[m
+Author: JihyeonPark <pseudoq129@gmail.com>
+Date:   Fri Dec 8 14:20:21 2023 +0900
+
+    🍱 add boat with buoyancy
+
+[33mcommit 72632192441c538c7f8db8a86bf8ae93663fc225[m
+Merge: 4a6f1be dbc46dd
+Author: Sang Min Kim <nstar971125@naver.com>
+Date:   Thu Dec 7 23:42:07 2023 +0700
+
+    Merge pull request #5 from nstar1125/issues/3
+    
+    Issues/3
+
+[33mcommit dbc46dd43f01f3e3524ae7f4a4a97871baa77b22[m[33m ([m[1;31morigin/issues/3[m[33m)[m
+Author: ‘nstar1125’ <nstar971125@naver.com>
+Date:   Fri Dec 8 01:39:25 2023 +0900
+
+    :sparkles: 물고기 판매 기능 함수 추가
+
+[33mcommit 6419597c7362b3e06e5d2e9178583e912366f728[m
+Author: ‘nstar1125’ <nstar971125@naver.com>
+Date:   Thu Dec 7 17:18:39 2023 +0900
+
+    :rocket: 유니티 씬 수정
+
+[33mcommit 2c70ec62ee5693dc584e466bd324f6cff715ccb3[m
+Author: ‘nstar1125’ <nstar971125@naver.com>
+Date:   Thu Dec 7 17:17:48 2023 +0900
+
+    :sparkles: 채집한 물고기 배로 이동
+
+[33mcommit 4a6f1bef96d59c40f208f5acfa87e4e4ffc03903[m
+Merge: 1d776ce 5dd509a
+Author: Sang Min Kim <nstar971125@naver.com>
+Date:   Thu Dec 7 14:05:52 2023 +0700
+
+    Merge pull request #2 from nstar1125/issues/1
+    
+    Issues/1
+
+[33mcommit 5dd509ab280919f64566dac881dd915258ada8ee[m[33m ([m[1;31morigin/issues/1[m[33m)[m
+Author: ‘nstar1125’ <nstar971125@naver.com>
+Date:   Wed Dec 6 22:56:04 2023 +0900
+
+    :sparkles: 채집한 물고기 수 유지기록 (어망) 추가
+
+[33mcommit a5381944eddbfcff44dafbb152d053698f52bf47[m
+Author: ‘nstar1125’ <nstar971125@naver.com>
+Date:   Wed Dec 6 21:37:28 2023 +0900
+
+    :sparkles: 물고기 채집 기능 추가
+
+[33mcommit abb048d5d74affef732eac6680b8d57b9ccb1375[m
+Author: ‘nstar1125’ <nstar971125@naver.com>
+Date:   Wed Dec 6 01:43:55 2023 +0900
+
+    :sparkles: Player 물 밖 이동 제한
+
+[33mcommit 1d776cedfe337483f422eb0cf718c93331c49fba[m
+Author: ‘nstar1125’ <nstar971125@naver.com>
+Date:   Wed Dec 6 00:28:35 2023 +0900
+
+    :rocket: Main scene 적용
+
+[33mcommit 7e3afe81fbe26a9bce0ebcae1f7069d9a0e1e8df[m
+Author: ‘nstar1125’ <nstar971125@naver.com>
+Date:   Tue Dec 5 23:09:21 2023 +0900
+
+    :sparkles: Character 에셋 및 채집 모션 추가
+
+[33mcommit 168217686cdd110bfda1ea37bc9d1a4691c2bd6a[m
+Author: ‘nstar1125’ <nstar971125@naver.com>
+Date:   Tue Dec 5 16:07:53 2023 +0900
+
+    :tada: Init
+
+[33mcommit 116f9e55fa5d0932e4812c6dda7de233133f39d8[m
+Author: ‘nstar1125’ <nstar971125@naver.com>
+Date:   Tue Dec 5 16:06:13 2023 +0900
+
+    :memo: Add .gitattributes
+
+[33mcommit 5df3a49f450651866884961cb96e0302c5fa12d0[m
+Author: Sang Min Kim <nstar971125@naver.com>
+Date:   Tue Dec 5 15:49:40 2023 +0900
+
+    Initial commit
