@@ -11,6 +11,7 @@ public class playerMovement : MonoBehaviour
     public float rotateSpeed = 100f;
 
     private float currentSpeed = 0f;
+    public bool isInWater = true; //물 안에 있는지 밖에있는지 토글 (임시)
 
     private Rigidbody rb;
 
@@ -82,6 +83,16 @@ public class playerMovement : MonoBehaviour
         
     }
     void CheckInsideWater(){
+        //물 밖인지 아닌지 체크하는 토글 추가
+        if (transform.position.y >= waterCollider.bounds.min.y)
+        {
+            isInWater = false;
+        }
+        else
+        {
+            isInWater = true;
+        }
+        
         if (transform.position.y > waterCollider.bounds.min.y+3f)
         {
             // 플레이어가 물 밖으로 나가려고 할 때
@@ -89,6 +100,8 @@ public class playerMovement : MonoBehaviour
             newPosition.y = waterCollider.bounds.min.y+3f;
             transform.position = newPosition;
         }
+
+        
     }
 
     void OnCollisionEnter(Collision collision)
