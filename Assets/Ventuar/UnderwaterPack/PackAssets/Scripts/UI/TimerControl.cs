@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 public class TimerControl : MonoBehaviour
 {
     
@@ -34,6 +35,7 @@ public class TimerControl : MonoBehaviour
         {
             // 타이머가 0에 도달하면 원하는 동작 수행
             timerText.text = "00:00";
+            SceneManager.LoadScene("EndScene");
             Debug.Log("타이머 종료!");
         }
     }
