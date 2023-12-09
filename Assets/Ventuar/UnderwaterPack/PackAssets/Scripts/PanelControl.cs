@@ -8,6 +8,21 @@ public class PanelControl : MonoBehaviour
     public PlayerInventory playerInventory;
     private Dictionary<string, int> collectedFishCount = new Dictionary<string, int>();
     public Text fishInfoText; // Text 컴포넌트를 참조하기 위한 변수
+    private Dictionary<string, string> fishToKOR = new Dictionary<string, string>()
+    {
+        {"Atlantic Cod", "다금바리"},
+        {"Flowerhorn", "혹돔"},
+        {"Red Snapper", "참돔"},
+        {"Salmon", "농어"},
+        {"Piranha", "병어"},
+        {"Catfish", "메기"},
+        {"Sea Bass", "고등어"},
+        {"Herring", "꽁치"},
+        {"Common Carp", "전갱이"},
+        {"Koi", "잉어"},
+        {"Kelp01", "미역"},
+        // 물고기 종류와 가격을 필요에 따라 추가
+    };
     void Awake()
     {
         // infoPanel이 null이면 Find 메서드로 찾아서 할당
@@ -63,7 +78,7 @@ public class PanelControl : MonoBehaviour
 
             foreach (KeyValuePair<string, int> fishEntry in fishInfo)
             {
-                fishInfoText.text += "- "+fishEntry.Key + ": " + fishEntry.Value + "마리 \n";
+                fishInfoText.text += "- "+fishToKOR[fishEntry.Key] + ": " + fishEntry.Value + "마리 \n";
             }
         }
         else
