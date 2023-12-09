@@ -10,6 +10,9 @@ public class O2 : MonoBehaviour
     public float currentOxygen;
 
     [SerializeField] private Image image_gauge;
+    [SerializeField] private string sound_LackOfOxygen;
+    [SerializeField] private float breatheTime;
+    private float currentLackTime;
 
     private playerMovement player;
     private HP hp;
@@ -29,6 +32,7 @@ public class O2 : MonoBehaviour
     {
         DecreaseOxygen();
         GetOutWater();
+        soundplay();
     }
     private void GetOutWater()
     {
@@ -47,6 +51,22 @@ public class O2 : MonoBehaviour
         {
             currentOxygen -= Time.deltaTime; //산소 감소
             image_gauge.fillAmount = currentOxygen / totalOxygen; //산소게이지 감소
+        }
+    }
+
+    private void soundplay()
+    {
+        if(player.isInWater)
+        {
+            if (currentOxygen <= 0)
+            {
+                currentLackTime += Time.deltaTime;
+                if(currentLackTime >= breatheTime)
+                {
+                    SoundManager.instance.PlaySE(sound_LackOfOxygen);
+                    currentLackTime = 0;
+                }
+            }         
         }
     }
 }

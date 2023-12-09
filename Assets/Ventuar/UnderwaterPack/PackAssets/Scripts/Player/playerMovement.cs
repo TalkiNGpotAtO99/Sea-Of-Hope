@@ -5,23 +5,31 @@ using UnityEngine;
 
 public class playerMovement : MonoBehaviour
 {
-   public float acceleration = 2f;   // 가속도
+    public float acceleration = 2f;   // 가속도
     public float deceleration = 10f;  // 감속도
     public float maxSpeed = 10f;      // 최대 속도
     public float rotateSpeed = 100f;
 
     private float currentSpeed = 0f;
-    public bool isInWater = true; //물 안에 있는지 밖에있는지 토글 (임시)
+    public bool isInWater = true; // 물 안에 있는지 밖에있는지 토글
+
+    // 필요한 오디오 이름
+    [SerializeField] private string sound_Collision;
+    [SerializeField] private string sound_LackOfOxygen;
 
     private Rigidbody rb;
-
+    private HP hp;
+    private FishDamage fishdamage;
     Animator animator;
-    
+
     public Collider waterCollider;
 
     void Start()
     {
+        hp = FindObjectOfType<HP>();
+        fishdamage = FindObjectOfType<FishDamage>();
         rb = GetComponent<Rigidbody>();
+
         rb.collisionDetectionMode = CollisionDetectionMode.Continuous;
         rb.interpolation = RigidbodyInterpolation.Interpolate;
         // 중력 비활성화
@@ -33,17 +41,18 @@ public class playerMovement : MonoBehaviour
     {
         FreezeMoveAndRotate();
     }
-    void FreezeMoveAndRotate(){
-        rb.angularVelocity=Vector3.zero;
-        rb.velocity =Vector3.zero;
+    void FreezeMoveAndRotate() {
+        rb.angularVelocity = Vector3.zero;
+        rb.velocity = Vector3.zero;
     }
 
     void Update()
     {
         MoveAndRotate();
         CheckInsideWater();
+        hp.GaugeUpdate();
     }
-    
+
 
     void MoveAndRotate()
     {
@@ -76,13 +85,14 @@ public class playerMovement : MonoBehaviour
         transform.Rotate(rotateDirection * rotateSpeed * Time.deltaTime);
 
         // 공격 및 채집 모션
-        if(Input.GetKeyDown(KeyCode.Space))
+        if (Input.GetKeyDown(KeyCode.Space))
         {
             animator.SetTrigger("Attack");
+            SoundManager.instance.PlaySE(sound_LackOfOxygen);
         }
-        
+
     }
-    void CheckInsideWater(){
+    void CheckInsideWater() {
         //물 밖인지 아닌지 체크하는 토글 추가
         if (transform.position.y >= waterCollider.bounds.min.y)
         {
@@ -92,22 +102,25 @@ public class playerMovement : MonoBehaviour
         {
             isInWater = true;
         }
-        
-        if (transform.position.y > waterCollider.bounds.min.y+3f)
+
+        if (transform.position.y > waterCollider.bounds.min.y + 3f)
         {
             // 플레이어가 물 밖으로 나가려고 할 때
             Vector3 newPosition = transform.position;
-            newPosition.y = waterCollider.bounds.min.y+3f;
+            newPosition.y = waterCollider.bounds.min.y + 3f;
             transform.position = newPosition;
         }
-
-        
     }
-
     void OnCollisionEnter(Collision collision)
     {
         // 충돌 시 가속도를 -1으로 만듦
         currentSpeed = -1f;
+        SoundManager.instance.PlaySE(sound_Collision);
+        if(collision.transform.tag == "singleFish")
+        {
+            SoundManager.instance.PlaySE(sound_LackOfOxygen);
+            hp.DecreaseHP(fishdamage.fishDamage);
+            Debug.Log("hp줄어듦");
+        }
     }
-
 }
