@@ -23,7 +23,7 @@ public class HP : MonoBehaviour
     private Image[] images_hp; //왼쪽 + 오른쪽 hp
     private const int HP_left = 0, HP_right = 1;
 
-    private PlayerStatus thePlayerStatus;
+    private FishDamage thePlayerStatus;
     private playerMovement player;
     private O2 o2;
     private float temp;
@@ -32,7 +32,7 @@ public class HP : MonoBehaviour
     void Start()
     {
         currentHp = hp;
-        thePlayerStatus = FindObjectOfType<PlayerStatus>();
+        thePlayerStatus = FindObjectOfType<FishDamage>();
         player = FindObjectOfType<playerMovement>();
         o2 = FindObjectOfType<O2>();
 
