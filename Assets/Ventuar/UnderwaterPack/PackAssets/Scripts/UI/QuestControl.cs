@@ -11,6 +11,10 @@ public class QuestControl : MonoBehaviour
     {
         fishIndex = Random.Range(0, 10);
         fishNum = Random.Range(1, 3);
+        PlayerPrefs.DeleteKey("fishIndex");
+        PlayerPrefs.SetInt("fishIndex", fishIndex);
+        PlayerPrefs.DeleteKey("fishNum");
+        PlayerPrefs.SetInt("fishNum", fishNum);
     }
     public int GetQFishIndex(){
         return fishIndex;

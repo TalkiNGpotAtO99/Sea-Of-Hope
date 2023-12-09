@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class HP : MonoBehaviour
 {
@@ -54,6 +55,7 @@ public class HP : MonoBehaviour
         }
         //게이지 나타내기
         GaugeUpdate();
+        SaveData();
     }
 
     public void GaugeUpdate()
@@ -65,8 +67,14 @@ public class HP : MonoBehaviour
     public void DecreaseHP(int _count)
     {
         currentHp -= _count;
-        if (currentHp <= 0)
+        if (currentHp <= 0){
             Debug.Log("Game Over 게임 오버");
-
+            SaveData();
+            SceneManager.LoadScene("EndScene");
+        }
+    }
+    public void SaveData(){
+        PlayerPrefs.DeleteKey("HP");
+        PlayerPrefs.SetInt("HP", currentHp);
     }
 }

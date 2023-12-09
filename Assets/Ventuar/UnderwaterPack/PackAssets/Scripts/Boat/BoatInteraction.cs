@@ -9,7 +9,7 @@ public class BoatInteraction : MonoBehaviour
     public Dictionary<string, int> boatFishCount = new Dictionary<string, int>();
     // 다금바리, 혹돔, 참돔, 농어, 병어, 메기, 고등어, 꽁치, 전갱이, 잉어, 미역
     private string[] fishTypes = { "Atlantic Cod", "Flowerhorn", "Red Snapper", "Salmon", "Piranha", "Catfish", "Sea Bass", "Herring", "Common Carp", "Koi", "Kelp01" };
-
+    private bool isNear = false;
     public Dictionary<string, int> GetBoatInventory(){
         return boatFishCount;
     }
@@ -35,16 +35,22 @@ public class BoatInteraction : MonoBehaviour
         // 플레이어가 Boat과 접촉한 경우
         if (other.CompareTag("Player"))
         {
-            Debug.Log("플레이어가 Boat에 접촉했습니다. 스페이스바를 눌러 Fish를 옮깁니다.");
+            isNear = true;
         }
     }
 
     void OnTriggerStay(Collider other)
     {
         // 플레이어가 Boat과 접촉 중이고 스페이스바를 누른 경우
-        if (other.CompareTag("Player") && Input.GetKeyDown(KeyCode.Space))
+        if (isNear  && Input.GetKeyDown(KeyCode.Space))
         {
             TransferFishToBoat();
+        }
+    }
+    void OnTriggerExit(Collider other){
+        if (other.CompareTag("Player"))
+        {
+            isNear = false;
         }
     }
 
@@ -77,6 +83,7 @@ public class BoatInteraction : MonoBehaviour
     public void SaveData(Dictionary<string,int> data){
         foreach (KeyValuePair<string, int> fishEntry in data)
         {
+            PlayerPrefs.DeleteKey(fishEntry.Key);
             PlayerPrefs.SetInt(fishEntry.Key, fishEntry.Value);
         }
     }

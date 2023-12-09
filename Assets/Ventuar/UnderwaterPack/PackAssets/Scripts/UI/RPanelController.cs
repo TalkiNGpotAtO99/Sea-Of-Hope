@@ -70,9 +70,16 @@ public class RPanelController : MonoBehaviour
             Debug.LogError("resultText 할당되지 않았습니다.");
             return;
         }
-
-
-
+        if(PlayerPrefs.GetInt("HP")<=0){
+            DeadResult();
+        }
+        else{
+            AliveResult();
+        }
+        
+        
+    }
+    public void AliveResult(){
         //텍스트 초기화
         resultText.text = "[채집결과]\n";
 
@@ -82,12 +89,29 @@ public class RPanelController : MonoBehaviour
         {
             resultText.text += "- "+fishToKOR[fishEntry.Key] + ": " + fishEntry.Value + "마리 \n";
         }
-        resultText.text += "\n";
-        resultText.text += "[총 수익]\n";
         resultText.text += "+ "+SellAllFish(fishInfo)+"원\n";
         resultText.text += "\n";
+        resultText.text += "[퀘스트]\n";
+        resultText.text += "- "+fishToKOR[fishTypes[PlayerPrefs.GetInt("fishIndex")]] + ": " + fishInfo[fishTypes[PlayerPrefs.GetInt("fishIndex")]] + "/"+PlayerPrefs.GetInt("fishNum")+"마리 \n";
+        int bonus = 0;
+        if(fishInfo[fishTypes[PlayerPrefs.GetInt("fishIndex")]]>=PlayerPrefs.GetInt("fishNum")){
+            bonus = 500000;
+        }else{
+            bonus = 0;
+        }
+        resultText.text += "+ "+bonus+"원\n";
+        resultText.text += "\n";
+        resultText.text += "[총 수익]\n";
+        resultText.text += "+ "+(bonus+SellAllFish(fishInfo))+"원\n";
+        resultText.text += "\n";
         resultText.text += "esc 키를 눌러 종료 ..."; 
-        
+    }
+    public void DeadResult(){
+        //텍스트 초기화
+        resultText.text = "[게임오버]\n";
+        resultText.text += "플레이어가 기절하였습니다! \n";
+        resultText.text += "\n";
+        resultText.text += "esc 키를 눌러 종료 ..."; 
     }
     public Dictionary<string, int> LoadData()
     {
