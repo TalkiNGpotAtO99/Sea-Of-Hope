@@ -12,8 +12,10 @@ public class FishDamage : MonoBehaviour
 
     [SerializeField] private float durationTime; //데미지 입는 지속시간
     private float currentDurationTime;
+    
+    //필요한 오디오
+    [SerializeField] private string sound_Ouch;
 
-    [SerializeField] private string sound_Collision;
 
     private const int Orca = 0, GreatWhiteShark = 1, HammarheadShark = 2, SwordFish = 3;
     
@@ -83,6 +85,6 @@ public class FishDamage : MonoBehaviour
     {
         // 데미지 입으면 hp감소
         hp.DecreaseHP(fishDamage);
-        SoundManager.instance.PlaySE(sound_Collision);
+        SoundManager.instance.PlaySE(sound_Ouch);
     }
 }
