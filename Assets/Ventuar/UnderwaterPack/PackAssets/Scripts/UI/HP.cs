@@ -18,6 +18,8 @@ public class HP : MonoBehaviour
     //hp가 가득 찼는지 아닌지 (감소 여부)
     private bool isHpUsed;
 
+    //필요한 오디오
+    [SerializeField] private string sound_GameOver;
 
     //필요한 이미지
     [SerializeField]
@@ -43,7 +45,7 @@ public class HP : MonoBehaviour
     void Update()
     {
 
-        //산소가 고갈되면 1초당 2씩 hp 감소
+        //산소가 고갈되면 1초당 hp 감소
         if (o2.currentOxygen <= 0 && player.isInWater)
         {
             temp += Time.deltaTime;
@@ -69,10 +71,12 @@ public class HP : MonoBehaviour
         currentHp -= _count;
         if (currentHp <= 0){
             Debug.Log("Game Over 게임 오버");
+            SoundManager.instance.PlaySE(sound_GameOver);
             SaveData();
             SceneManager.LoadScene("EndScene");
         }
     }
+
     public void SaveData(){
         PlayerPrefs.DeleteKey("HP");
         PlayerPrefs.SetInt("HP", currentHp);

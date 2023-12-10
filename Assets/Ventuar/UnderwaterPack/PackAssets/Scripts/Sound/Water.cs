@@ -6,8 +6,11 @@ public class Water : MonoBehaviour
 {
     public static bool isWater = false;
 
+    // 필요한 오디오
     [SerializeField] private string sound_DiveIn;
     [SerializeField] private string sound_DiveOut;
+    [SerializeField] private string sound_UnderWater;
+    [SerializeField] private string sound_OnWater;
 
     // Start is called before the first frame update
     void Start()
@@ -39,7 +42,9 @@ public class Water : MonoBehaviour
 
     private void GetWater(Collider _player)
     {
-        SoundManager.instance.PlaySE(sound_DiveIn);
+        SoundManager.instance.StopSE(sound_UnderWater);
+        SoundManager.instance.PlaySE(sound_DiveOut);
+        SoundManager.instance.PlaySE(sound_OnWater);
         isWater = true;
     }
 
@@ -47,7 +52,10 @@ public class Water : MonoBehaviour
     {
         if (isWater)
         {
-            SoundManager.instance.PlaySE(sound_DiveOut);
+            SoundManager.instance.PlaySE(sound_DiveIn);
+            SoundManager.instance.StopSE(sound_OnWater);
+            SoundManager.instance.PlaySE(sound_UnderWater);
+
             isWater = false;
         }
     }

@@ -16,6 +16,8 @@ public class playerMovement : MonoBehaviour
     // 필요한 오디오 이름
     [SerializeField] private string sound_Collision;
     [SerializeField] private string sound_LackOfOxygen;
+    [SerializeField] private string sound_Attack;
+    [SerializeField] private string sound_Ouch;
 
     private Rigidbody rb;
     private HP hp;
@@ -88,7 +90,7 @@ public class playerMovement : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Space))
         {
             animator.SetTrigger("Attack");
-            SoundManager.instance.PlaySE(sound_LackOfOxygen);
+            SoundManager.instance.PlaySE(sound_Attack);
         }
 
     }
@@ -116,9 +118,10 @@ public class playerMovement : MonoBehaviour
         // 충돌 시 가속도를 -1으로 만듦
         currentSpeed = -1f;
         SoundManager.instance.PlaySE(sound_Collision);
+        // 만약 충돌 대상이 singlefish라면
         if(collision.transform.tag == "singleFish")
         {
-            SoundManager.instance.PlaySE(sound_LackOfOxygen);
+            SoundManager.instance.PlaySE(sound_Ouch);
             hp.DecreaseHP(fishdamage.fishDamage);
             Debug.Log("hp줄어듦");
         }
